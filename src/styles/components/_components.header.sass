@@ -1,0 +1,87 @@
+.ant-badge-count
+  margin-left: 10px
+  height: 15px
+  width: 15px
+  line-height: 15px
+  font-size: 11px
+  min-width: inherit
+  padding: 0px
+
+.header
+  &__container
+    +g(full)
+    max-width: 1240px
+    margin: 20px auto
+
+  &__box
+    +g(full)
+
+  &__logo
+    +g(full)
+    width: 100%
+    cursor: pointer
+    img
+      max-width: 200px
+      padding: 10px 0
+
+  &__navbar
+    width: 100%
+    +g(full, space-between, middle)
+
+
+  &__cart-box-container
+    +g(full, middle)
+    cursor: pointer
+
+  &__menu
+    +i(9.5/12)
+    +g(full, middle)
+
+  &__menu-item
+    margin-right: 20px
+    font-size: 14px
+    color: $color-blue-dark
+    font-weight: 300
+    text-transform: uppercase
+    border-right: 1px solid rgba($color-blue-dark, .2)
+    padding-right: 20px
+    cursor: pointer
+    margin-top: 20px
+    &:hover
+      text-decoration: underline
+      color: $color-gray-dark
+
+  &__user-menu
+    +g(full, space-between, middle)
+    +i(2.5/12)
+
+  &__icon-image
+    font-size: 20px
+
+  &__icon-text
+    margin-left: 20px
+    font-size: 14px
+
+  &__icon
+    font-size: 20px
+
+  &__profile-menu
+    margin-left: 20px
+    border-radius: 5px
+    border: 1px solid $color-brand
+    padding: 10px 20px
+    cursor: pointer
+    transition: all ease-in-out .2s
+    &:hover
+      background: lighten($color-brand, 35%)
+
+    &__icon
+      text-align: center
+
+    &__text
+      font-size: 12px
+      margin-top: 5px
+
+.ant-badge
+  line-height: 1.2
+  margin-right: 10px

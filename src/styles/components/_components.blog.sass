@@ -1,0 +1,148 @@
+.blog
+  +g(full, center)
+  background: $color-gray-ui
+  height: 100%
+  width: 100%
+  background: white
+  &__background
+    background: linear-gradient(-180deg, #444 0%, #2B2B2B 100%)
+    width: 100%
+    height: 300px
+    +bp(md)
+      height: 500px
+    &--brown
+      background: linear-gradient(85.86deg, #B28C5F 0%, #DCAC71 100%)
+    &--height
+      height: 900px
+      +bp(md)
+        height: 500px
+  &__image
+    width: 100%
+    height: 100%
+    background-size: cover
+    background-position: inherit
+    display: flex
+    align-items: center
+    flex-direction: column  
+    justify-content: flex-start
+    & h1
+      font-family: Crimson Text
+      font-style: italic
+      font-weight: normal
+      line-height: 95px
+      text-align: center
+      color: #FFFFFF
+      width: 100%
+      font-size: 40px
+      +bp(md)
+        font-size: 70px
+    & img
+      width: 100%
+      margin-top: 2em
+  &__body
+    font-size: 13px
+    line-height: 1.6em
+    background: white
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    position: relative
+    top: -120px
+    margin: 0
+    padding: 20px
+    max-width: 460px
+    +bp(md)
+      max-width: 960px
+      margin: 10px 40px 0
+      padding: 50px
+    &--top-200
+      top: -200px
+
+  &__description
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-direction: column
+    font-family: Open Sans
+    font-style: normal
+    font-weight: normal
+    font-size: 18px
+    line-height: 37px
+    text-align: center
+    color: #626262
+    width: 100%
+    +bp(md)
+      width: 70%
+
+    & div
+      width: 100%
+      margin-bottom: 2em
+    
+    & img
+      width: 100%
+
+    &--align-left
+      text-align: left
+  &__icon-container
+    display: flex
+    align-items: center
+    justify-items: center
+    height: 60px
+  &__icon
+    width: 100%
+    height: 100%
+
+  &__title
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 45%
+    flex-direction: column
+    +bp(md)
+      flex-direction: row
+    & img
+      width: 200px
+
+  &__subtitle
+    font-family: Quicksand
+    font-style: normal
+    font-weight: 500
+    line-height: 49px
+    letter-spacing: 0.2em
+    text-transform: uppercase
+    color: #FFE9CE
+    width: 100%
+    font-size: 20px
+    +bp(md)
+      width: 87%
+      font-size: 30px
+  &__texts
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    width: 100%
+    padding: 1em 0
+    +bp(md)
+      padding: 0
+  &__highlight-text
+    // +g(full,middle)
+    display: flex
+    width: 100%
+    align-items: center
+    flex-direction: column
+    font-family: Crimson Text
+    font-style: italic
+    font-weight: normal
+    font-size: 20px
+    line-height: 56px
+    text-align: center
+    color: #765630
+    width: 75% !important
+
+    & span
+      font-weight: bold
+      width: 100%
+    & img
+      width: 30px

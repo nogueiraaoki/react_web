@@ -1,0 +1,65 @@
+.brand-bar
+  +g(full, space-between, middle)
+  padding: 20px 20px
+  border-top: 1px solid $color-gray-ui
+
+
+  &__menu
+    +g(full, right)
+    justify-content: flex-start
+    sm
+      +i(2/12)
+
+  &__menu-link
+    padding: 10px 16px
+    font-size: 11px
+    border: 2px solid white
+    transition: all ease-in-out .2s
+    cursor: pointer
+    font-weight: bold
+    color: black
+    sm
+      +i(6/12)
+    &.active, &:hover
+      border: 2px solid $color-brown
+
+  &__social-links
+    +i(4/14)
+    +g(full)
+
+  &__social-link
+    padding-right: 5px
+    width: 30px
+
+  &__brand
+    text-align: center
+    +i(3/14)
+    max-width: 80px
+    cursor: pointer
+
+  &__links
+    +i(2/14)
+    width: 250px
+    +g(full)
+    justify-content: flex-start
+    +bp(md)
+      +g(full, right)
+
+  &__link
+    text-align: center
+    margin-left: 10px
+    cursor: pointer
+
+  &__link-icon
+    width: 16px
+    margin: 0 auto
+
+  &__link-name
+    color: $color-brown
+    font-weight: 900
+    font-size: 10px
+    text-transform: uppercase
+    font-weight: 300
+    cursor: pointer
+    margin-top: 5px
+    font-family: $sans-serif

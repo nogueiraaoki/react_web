@@ -1,0 +1,58 @@
+/// @group base
+/// @name type
+
+body
+  font-family: $sans-serif
+
+// Emboldened elements.
+strong, b, dt
+  font-weight: bold
+
+// Code-like elements.
+code, kbd, samp
+  color: $color-code
+  font-family: $monospace
+
+
+pre
+  white-space: pre
+  word-wrap: normal
+  overflow: auto
+  // padding: $inuit-base-spacing-unit--small
+  background-color: $color-pre-background
+  border-radius: $base-radius
+
+  &,
+  code, kbd, samp
+    color: $color-pre
+
+// Horizontal rules.
+hr
+  border: none
+  border-bottom: 1px solid $color-gray-ui
+  // margin-bottom: $inuit-base-spacing-unit - 1px
+
+// Highlighted text.
+mark
+  pre &
+    background: none
+    border-bottom: 1px solid
+    color: inherit
+
+p
+  font-family: $sans-serif
+
+h1
+  font-size: 2.3em
+  +bp(md)
+    font-size: 5em
+  line-height: 1.1
+  font-weight: 500
+  letter-spacing: -0.05em
+
+h2
+  font-size: 1em
+  +bp(md)
+    font-size: 1.3em
+  line-height: 1.3
+  font-weight: 400

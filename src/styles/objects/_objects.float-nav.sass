@@ -1,0 +1,24 @@
+.float-nav
+  position: absolute
+  width: 200px
+  padding: 20px
+  background: white
+  border-radius: 3px
+  border: 1px solid $color-gray-ui
+  transform: translateX(-50%)
+  box-shadow: 0 0 10px rgba(black, .2)
+  z-index: 10000
+
+  &__item
+    border-bottom: 1px solid $color-gray-ui
+    padding: 10px 20px
+    font-size: 13px
+    cursor: pointer
+    &:hover
+      background: lighten($color-gray-ui, 10%)
+
+    &:last-child
+      border-bottom: none
+
+    &.warning
+      color: $color-red

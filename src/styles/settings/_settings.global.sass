@@ -1,0 +1,79 @@
+// base border radius
+$base-radius: 3px
+
+body
+  background-color: $color-gray-lightest
+
+img
+  width: 100%
+
+.section
+  overflow: hidden
+
+.fp-controlArrow
+  display: none
+
+a
+  text-decoration: none
+
+.fixed-elements
+  +g(full, center, middle)
+  position: fixed
+  width: 100%
+  height: 100%
+  background: url("/assets/images/circle-bg.svg")
+  background-size: cover
+
+.fixed-square
+  overflow: hidden
+  // position: fixed
+  background: white
+  box-shadow: 0 0 20px 0 rgba(black, .15)
+  width: 90%
+  height: 85%
+  transition: background ease-in-out .2s
+  margin-top: 10%
+  &.active
+    background: $color-brand
+  +bp(md)
+    box-shadow: 0 0 50px 0 rgba(black, .15)
+    width: 80%
+    height: 70%
+    margin-top: 0px
+
+  &__container
+    width: 90%
+    height: 85%
+    position: fixed
+    overflow: hidden
+    +bp(md)
+      width: 80%
+      height: 70%
+      margin-top: 0
+.brand
+  width: 165px
+  height: 33px
+  background: url("/assets/images/logo-ap-comunicacao.svg")
+  background-repeat: no-repeat
+  background-size: cover
+  position: fixed
+  top: 15px
+  left: 30px
+  z-index: 100
+  +bp(md)
+    top: 30px
+    left: 30px
+    width: 100%
+    height: 50px
+    background-size: auto 100%
+
+.product-list-container
+  display: flex
+  width: 100%
+  margin: 0 auto
+  height: 100%
+  flex-direction: column
+  background-color: #f1f1f1
+  align-items: center
+  justify-content: center
+  padding: 100px 20px

@@ -1,0 +1,49 @@
+// ========================================
+//   application.
+//   This file is automatically updated by itcsscli.
+// ========================================
+
+// [0] Requirements --- Vendor libraries
+// [1] Settings ------- Sass vars, etc.
+// [2] Tools ---------- Functions and mixins.
+// [3] Generic -------- Generic, high-level styling, like resets, etc.
+// [4] Base ----------- Unclasses HTML elements (e.g. `h2`, `ul`).
+// [5] Objects -------- Objects and abstractions.
+// [6] Components ----- Your designed UI elements (inuitcss includes none of these).
+// [7] Trumps --------- Overrides and helper classes.
+
+$componentName: "app";
+
+@import "requirements/requirements.vendor";
+
+// [1] Settings
+@import "settings/settings.grid";
+@import "settings/settings.colors";
+@import "settings/settings.fonts";
+@import "settings/settings.global";
+
+// [3] Generic
+@import "generic/generic.reset";
+@import "generic/generic.animations";
+
+// [4] Base
+@import "base/base.type";
+
+// [5] Objects
+@import "objects/objects.container";
+@import "objects/objects.form";
+@import "objects/objects.float-nav";
+@import "objects/objects.copyright";
+@import "objects/objects.checkout-container";
+@import "objects/objects.modal";
+@import "objects/objects.blog-call";
+
+// [6] Components
+@import "components/components.blog";
+@import "components/components.brand-bar";
+@import "components/components.footer";
+@import "components/components.header";
+@import "components/components.post-show";
+@import "components/components.posts";
+@import "components/components.registration-form";
+@import "components/components.toast";
