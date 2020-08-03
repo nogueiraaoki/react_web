@@ -6,7 +6,6 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import { toast } from "react-toastify";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -22,32 +21,6 @@ import RegistrationScreen from "./screens/RegistrationScreen/RegistrationScreen"
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 
 const styles = "app";
-
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props => {
-      const state = store.getState();
-      let isLogged = false;
-      if (state && state.userReducer && state.userReducer.loggedIn) {
-        isLogged = true;
-      }
-      if (isLogged) {
-        return <Component {...props} {...rest} />;
-      } else {
-        toast.error("Faça login!");
-        return (
-          <Redirect
-            to={{
-              pathname: ROUTES.rootUrl + ROUTES.login.info.url,
-              state: { from: props.location }
-            }}
-          />
-        );
-      }
-    }}
-  />
-);
 
 const RestrictRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -151,7 +124,7 @@ class App extends React.Component {
                 path={ROUTES.rootUrl}
                 render={() => <BlogScreen pageChange={this.pageChange} />}
               />
-              <PrivateRoute
+              <Route
                 exact
                 path={ROUTES.rootUrl + ROUTES.post.info.url + "/:id"}
                 render={() => <PostScreen pageChange={this.pageChange} />}

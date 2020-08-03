@@ -1,6 +1,6 @@
 export const ROUTES = {
     rootUrl: "/",
-    routeUrl: "http://localhost:3001/",
+    routeUrl: "http://localhost:3002/",
     login: {
         info: {
             url: "login"
