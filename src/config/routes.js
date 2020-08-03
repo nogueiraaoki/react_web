@@ -11,21 +11,16 @@ export const ROUTES = {
             url: "register"
         },
     },
-    category: {
-        info: {
-            url: "category"
-        },
-    },
     post: {
       info: {
         url: "post"
-      }
+      },
     },
     getBlogPosts: {
         info: {
             url: "posts",
             type: "get"
-        }
+        },
     },
     registerClient: {
         info: {

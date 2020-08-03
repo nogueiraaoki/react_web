@@ -6,6 +6,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -21,6 +22,32 @@ import RegistrationScreen from "./screens/RegistrationScreen/RegistrationScreen"
 import LoginScreen from "./screens/LoginScreen/LoginScreen";
 
 const styles = "app";
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props => {
+      const state = store.getState();
+      let isLogged = false;
+      if (state && state.userReducer && state.userReducer.loggedIn) {
+        isLogged = true;
+      }
+      if (isLogged) {
+        return <Component {...props} {...rest} />;
+      } else {
+        toast.error("Faça login!");
+        return (
+          <Redirect
+            to={{
+              pathname: ROUTES.rootUrl + ROUTES.login.info.url,
+              state: { from: props.location }
+            }}
+          />
+        );
+      }
+    }}
+  />
+);
 
 const RestrictRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -52,7 +79,6 @@ const RestrictRoute = ({ component: Component, ...rest }) => (
 );
 
 class App extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -101,15 +127,6 @@ class App extends React.Component {
             return "active";
           break;
         }
-        case "CATEGORY": {
-          if (
-            this.route.history.location.pathname ===
-            ROUTES.rootUrl + ROUTES.category.info.url
-          ) {
-            return "active";
-          }
-          break;
-        }
         default:
           return "";
       }
@@ -134,11 +151,12 @@ class App extends React.Component {
                 path={ROUTES.rootUrl}
                 render={() => <BlogScreen pageChange={this.pageChange} />}
               />
-              <Route
+              <PrivateRoute
                 exact
                 path={ROUTES.rootUrl + ROUTES.post.info.url + "/:id"}
                 render={() => <PostScreen pageChange={this.pageChange} />}
               />
+
               <RestrictRoute
                 exact
                 path={ROUTES.rootUrl + ROUTES.login.info.url}
@@ -152,11 +170,6 @@ class App extends React.Component {
                 component={RegistrationScreen}
                 pageChange={this.pageChange}
                 route={this.route}
-              />
-              <Route
-                exact
-                path={ROUTES.category.info.url}
-                render={() => <div>category</div>}
               />
             </Switch>
           </Router>
